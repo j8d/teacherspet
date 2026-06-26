@@ -1,0 +1,26 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# VS Code local settings
+.vscode/
+
+# Godot imports and generated data
+.godot/
+.import/
+*.translation
+
+# Godot export output
+build/
+exports/
+
+# Xcode generated output
+DerivedData/
+*.xcworkspace/xcuserdata/
+*.xcodeproj/xcuserdata/
+*.xcodeproj/project.xcworkspace/xcuserdata/
+
+# Logs and temp files
+*.log
+*.tmp

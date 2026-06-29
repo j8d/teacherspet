@@ -1,15 +1,19 @@
 # Backlog
 
 ## Current Sprint: First Playable Slice
-- [ ] Wire `game/scenes/Main.tscn` to load `game/scenes/PetRoom.tscn`.
-- [ ] Add a visible placeholder Henry node in `PetRoom.tscn`.
-- [ ] Add `VocabularyPanel.tscn` with one prompt and three large touch buttons.
-- [ ] Load one question from `game/data/vocab_seed.json`.
-- [ ] Implement correct/incorrect answer feedback text.
-- [ ] Trigger one happy reaction and one thinking reaction on Henry.
-- [ ] Save and reload one progress value using `SaveManager.gd`.
+- [x] Wire `game/scenes/Main.tscn` to load `game/scenes/PetRoom.tscn`.
+- [x] Add a visible placeholder Henry node in `PetRoom.tscn`.
+- [x] Add `VocabularyPanel.tscn` with one prompt and three large touch buttons.
+- [x] Load one question from `game/data/vocab_seed.json`.
+- [x] Implement correct/incorrect answer feedback text.
+- [x] Trigger one happy reaction and one thinking reaction on Henry.
+- [x] Save and reload one progress value using `SaveManager.gd`.
 - [ ] Verify scene flow on iPad simulator in landscape mode.
 - [ ] Verify scene flow on Selah's iPad in landscape mode.
+
+> Code for the slice is complete but unverified: Godot is not installed yet
+> (see Milestone 1). Open the project in Godot 4.x to play-test, then complete
+> the two verification items above.
 
 ## Milestone 0: Repo Setup
 - [x] Initialize git

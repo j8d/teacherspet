@@ -1,4 +1,5 @@
 extends Node
+class_name SaveManager
 
 const SAVE_PATH := "user://teacherspet_save.json"
 

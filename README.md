@@ -2,11 +2,11 @@
 
 TeachersPet is a private iPad game for Selah.
 
-The first version is a small Godot 4 virtual pet vocabulary game where Selah teaches Henry (the pet cat) vocabulary words through short, touch-first interactions.
+The verified iPad slice currently runs from the Godot 3.6.2 `game3/` project, where Selah teaches Henry (the pet cat) vocabulary words through short, touch-first interactions.
 
 ## Current Scope
 
-- Godot 4 with GDScript only
+- Godot 3.6.2 with GDScript for the verified iPad build
 - iPad-first development and install through Xcode
 - Local-only prototype (no backend, no AI integration)
 - One room, one pet, one vocabulary activity for MVP

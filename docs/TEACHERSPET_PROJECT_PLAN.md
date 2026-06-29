@@ -2,7 +2,21 @@
 
 ## Purpose
 
-TeachersPet is a private, unpublished iPad game for my daughter Selah. The first version will be a small Godot 4 virtual pet vocabulary game. The project starts local-only, installs directly to an iPad through Xcode, and only adds backend and AI-generated content after the iPad prototype is proven to work.
+TeachersPet is a private, unpublished iPad game for my daughter Selah. The verified iPad prototype currently runs from the Godot 3.6.2 `game3/` slice. The project starts local-only, installs directly to an iPad through Xcode, and only adds backend and AI-generated content after the iPad prototype is proven to work.
+
+## Current Device Baseline (Godot 3)
+
+- Known-good engine path for Selah's iPad is currently Godot 3.6.2 in `game3/`.
+- Orientation is stable and correct using static project setting `window/handheld/orientation="reverse_landscape"`.
+- Do not force orientation at runtime in scripts.
+
+### Quick iPad Regression Checklist
+
+1. Cold launch from home screen and confirm no crash.
+2. Confirm app opens right-side-up in landscape.
+3. Answer three vocabulary prompts (mix of correct/incorrect).
+4. Background app for 10 seconds, foreground, and confirm scene is responsive.
+5. Force-quit and relaunch, then verify saved progress still loads.
 
 The immediate working folder is:
 
@@ -32,7 +46,7 @@ The app is not intended for public release at first. It will be installed direct
 
 ## Non-Negotiable Constraints
 
-- Use Godot 4. Recommended version: latest 4.x stable from godotengine.org (likely 4.4.x as of mid-2026). Export templates must match the installed version exactly.
+- Use the verified Godot 3.6.2 path for the current iPad prototype. Re-evaluate Godot 4 only after device stability is proven again.
 - Use GDScript, not C#.
 - Target iPad first. Her iPad is on iPadOS 16.7.16.
 - Use direct Xcode install first, not App Store, TestFlight, or web export.
@@ -106,7 +120,7 @@ Only assume this exists:
 
 Xcode is installed.
 
-The next goal is to create the repo structure, install Godot, create a minimal Godot project, and prove that a blank app can run on the iPad through Xcode.
+The current goal is to keep the verified Godot 3 iPad slice stable, continue porting the first playable gameplay path, and avoid reintroducing runtime orientation or export packaging regressions.
 
 ## Desired Repository Structure
 

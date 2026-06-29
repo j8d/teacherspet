@@ -1,0 +1,63 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "ColorRect",
+"class": "PetController",
+"language": "GDScript",
+"path": "res://scripts/pet/PetController.gd"
+}, {
+"base": "Resource",
+"class": "PetState",
+"language": "GDScript",
+"path": "res://scripts/pet/PetState.gd"
+}, {
+"base": "Node",
+"class": "SaveManager",
+"language": "GDScript",
+"path": "res://scripts/save/SaveManager.gd"
+}, {
+"base": "Reference",
+"class": "VocabQuestion",
+"language": "GDScript",
+"path": "res://scripts/vocab/VocabQuestion.gd"
+}, {
+"base": "Reference",
+"class": "VocabSession",
+"language": "GDScript",
+"path": "res://scripts/vocab/VocabSession.gd"
+}, {
+"base": "Control",
+"class": "VocabularyPanel",
+"language": "GDScript",
+"path": "res://scripts/ui/VocabularyPanel.gd"
+} ]
+_global_script_class_icons={
+"PetController": "",
+"PetState": "",
+"SaveManager": "",
+"VocabQuestion": "",
+"VocabSession": "",
+"VocabularyPanel": ""
+}
+
+[application]
+
+config/name="TeachersPet"
+run/main_scene="res://scenes/Main.tscn"
+config/icon="res://icon.png"
+
+[display]
+
+window/size/width=1280
+window/size/height=720
+window/handheld/orientation="reverse_landscape"
+window/stretch/mode="2d"
+window/stretch/aspect="expand"

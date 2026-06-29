@@ -7,8 +7,8 @@ This project is developed in Godot and installed directly onto an iPad using Xco
 - macOS on Ryan's M4 MacBook Pro.
 - Xcode installed and opened at least once.
 - Apple ID added in Xcode under Settings -> Accounts.
-- Godot 4.x stable installed.
-- Matching Godot export templates installed.
+- Godot 3.6.2 stable installed.
+- Matching Godot 3 export templates installed.
 - iPad connected by USB-C or available for wireless development after initial pairing.
 - iPad has trusted the Mac if prompted.
 
@@ -22,17 +22,17 @@ This project is developed in Godot and installed directly onto an iPad using Xco
 ## First-Time Godot Setup
 
 1. Open Godot.
-2. Create or open the project at `teacherspet/game/`.
+2. Create or open the verified project at `teacherspet/game3/`.
 3. Install export templates from Editor -> Manage Export Templates.
-4. Create a minimal 3D scene and set it as the main scene.
-5. Confirm the scene runs locally in the Godot editor.
+4. Confirm the real question loop runs locally in the Godot editor.
+5. Keep orientation locked to landscape in project settings.
 
 ## Export To iOS
 
 1. In Godot, open Project -> Export.
 2. Add an iOS export preset.
-3. Set the export path to something under `build/ios/`.
-4. Use a unique bundle identifier, initially `com.ryan.teacherspet`.
+3. Set the export path to `build/ios-game3/teacherspet-g3.xcodeproj`.
+4. Use bundle identifier `com.j8d.teacherspet.g3`.
 5. Set orientation to landscape only.
 6. Export the project.
 7. Open the generated Xcode project.
@@ -58,3 +58,59 @@ This project is developed in Godot and installed directly onto an iPad using Xco
 - The bundle identifier must be unique.
 - Xcode 26.6 may not include full support for older iPadOS device targets.
 - If export fails, confirm the Godot export templates match the installed Godot version exactly.
+
+## Verified CLI Workflow (2026-06-29)
+
+This is the exact path that worked end to end. Bundle id `com.j8d.teacherspet.g3`, team `2ZBRNRSJC4`.
+
+### Why we deploy to the physical iPad, not the simulator
+
+Godot 3.6.2's verified path uses the physical iPad (arm64) and `ios-deploy`
+for install and launch. Use the simulator only if you explicitly verify the
+matching template/arch combination first.
+
+### 1. Export the Xcode project from Godot (headless)
+
+```sh
+godot --headless --path game3 --export-debug "iOS" ../build/ios-game3/teacherspet-g3.xcodeproj
+```
+
+Requirements baked into `game3/project.godot` and `game3/export_presets.cfg`:
+
+- `*.json` is included so `res://data/vocab_seed.json` is packed.
+- `display/window/handheld/orientation="reverse_landscape"`.
+- A real `res://icon.png` (1024x1024, opaque) referenced as the app icon.
+
+### 2. Build + sign for the device (arm64)
+
+```sh
+DEVICE_UDID=4e0c9da18c05974cd18c3df63a1957f7c359bcf1   # Ryan's iPad (16.7.16)
+xcodebuild -project build/ios-game3/teacherspet-g3.xcodeproj -scheme teacherspet-g3 \
+  -configuration Debug -sdk iphoneos \
+  -destination "id=$DEVICE_UDID" \
+  DEVELOPMENT_TEAM=2ZBRNRSJC4 CODE_SIGN_STYLE=Automatic \
+  -allowProvisioningUpdates \
+  -derivedDataPath build/ios-game3/DerivedData build
+```
+
+Get the device UDID with `xcrun xctrace list devices` (use the hex UDID, not
+the CoreDevice UUID).
+
+### 3. Install + launch on the iPad
+
+`xcrun devicectl` reports this iPad as "unavailable" (CoreDevice is finicky with
+iOS 16), so use `ios-deploy` (`brew install ios-deploy`):
+
+```sh
+APP=build/ios-game3/DerivedData/Build/Products/Debug-iphoneos/teacherspet-g3.app
+ios-deploy --id "$DEVICE_UDID" --bundle "$APP" --justlaunch
+```
+
+A `run` / `success` in the output means it installed and launched. On first run
+you may need to trust the developer profile on the iPad
+(Settings -> General -> VPN & Device Management).
+
+### Notes
+
+- Free / personal-team installs expire ~7 days; rerun steps 2-3 to reinstall.
+- Build output lives under `build/ios-game3/` which is gitignored.

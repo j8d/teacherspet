@@ -1,6 +1,6 @@
 # Agent Rules
 
-This project is a Godot 4 iPad game called TeachersPet.
+This project currently has a verified Godot 3.6.2 iPad slice called TeachersPet.
 
 The game's design direction lives in `docs/GAME_DESIGN.md`. Read it before proposing
 mechanics, content, or UI. When a change conflicts with those principles, stop and flag
@@ -8,7 +8,7 @@ it rather than proceeding.
 
 ## Hard Rules
 
-- Use Godot 4 and GDScript.
+- Use the verified Godot 3.6.2 iPad path and GDScript.
 - Do not use C#.
 - Do not add backend code until the local iPad prototype milestone is complete.
 - Do not put API keys, secrets, tokens, or model credentials in this repository.
@@ -23,11 +23,11 @@ it rather than proceeding.
 
 ## Code Organization Rules
 
-- Keep pet behavior under `game/scripts/pet/`.
-- Keep vocabulary logic under `game/scripts/vocab/`.
-- Keep save/load logic under `game/scripts/save/`.
-- Keep reusable UI scenes under `game/scenes/ui/`.
-- Keep local vocabulary seed data under `game/data/`.
+- Keep pet behavior under `game3/scripts/pet/`.
+- Keep vocabulary logic under `game3/scripts/vocab/`.
+- Keep save/load logic under `game3/scripts/save/`.
+- Keep reusable UI scenes under `game3/scenes/ui/`.
+- Keep local vocabulary seed data under `game3/data/`.
 - Use typed GDScript where practical.
 - Keep network/API code out of the MVP unless Ryan explicitly starts a backend milestone.
 
@@ -37,8 +37,8 @@ it rather than proceeding.
 - Use `InputEventScreenTouch` and `InputEventScreenDrag` where custom input handling is needed.
 - Standard Button nodes handle touch automatically. Prefer them.
 - Landscape orientation only.
-- Set `display/window/handheld/orientation` to `landscape` in Godot project settings.
-- Confirm the iOS export preset matches landscape orientation.
+- Set `display/window/handheld/orientation` to `reverse_landscape` in the verified Godot 3 project settings.
+- Confirm the iOS export preset matches landscape orientation and bundles JSON seed data.
 - UI must be designed for large touch targets.
 - Minimum button size is 80x80 px.
 - No hover states.

@@ -2,6 +2,10 @@
 
 This project is a Godot 4 iPad game called TeachersPet.
 
+The game's design direction lives in `docs/GAME_DESIGN.md`. Read it before proposing
+mechanics, content, or UI. When a change conflicts with those principles, stop and flag
+it rather than proceeding.
+
 ## Hard Rules
 
 - Use Godot 4 and GDScript.
@@ -38,6 +42,27 @@ This project is a Godot 4 iPad game called TeachersPet.
 - UI must be designed for large touch targets.
 - Minimum button size is 80x80 px.
 - No hover states.
+
+## Learning and Engagement Rules
+
+- Never use the words quiz, test, lesson, or homework in player-facing text.
+- Frame every activity as play with Henry and friends, not as schoolwork.
+- Keep each activity completable in roughly 30-90 seconds.
+- Audio-first: the target word must always be hearable and replayable; never let
+  reading speed gate progress.
+- Pair any on-screen word with audio support.
+- Wrong answers must trigger a gentle, in-world reaction and route to support. Never
+  show punishing feedback, red X energy, or streak-loss pressure.
+- Reward effort and persistence, not only correct answers.
+- Teach spelling by phonics pattern, not random word lists.
+- Follow the staged spelling progression: recognition, partial production, guided
+  production, full production.
+- Provide a hint ladder: replay audio, show picture, reveal first letter, show ghosted
+  word, build together.
+- Adapt difficulty quietly. Never expose difficulty labels to the player.
+- Keep dyslexia-friendly visuals: uncluttered screens, generous spacing, clear type.
+- Avoid manipulative or compulsive gamification. Favor joyful, optional engagement.
+- Keep any parent/developer progress view separate and never shown to Selah.
 
 ## Development Behavior
 

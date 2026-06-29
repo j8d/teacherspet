@@ -1,0 +1,27 @@
+[
+  {
+    "prompt": "Which word means very happy?",
+    "options": ["joyful", "sleepy", "cloud"],
+    "answer_index": 0
+  },
+  {
+    "prompt": "Which word means tiny?",
+    "options": ["giant", "little", "storm"],
+    "answer_index": 1
+  },
+  {
+    "prompt": "Which word means to help?",
+    "options": ["assist", "erase", "juggle"],
+    "answer_index": 0
+  },
+  {
+    "prompt": "Which word means to look carefully?",
+    "options": ["ignore", "observe", "drop"],
+    "answer_index": 1
+  },
+  {
+    "prompt": "Which word means calm and quiet?",
+    "options": ["noisy", "gentle", "spiky"],
+    "answer_index": 1
+  }
+]

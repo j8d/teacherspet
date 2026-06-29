@@ -1,14 +1,25 @@
 # Backlog
 
+## Current Sprint: First Playable Slice
+- [ ] Wire `game/scenes/Main.tscn` to load `game/scenes/PetRoom.tscn`.
+- [ ] Add a visible placeholder Henry node in `PetRoom.tscn`.
+- [ ] Add `VocabularyPanel.tscn` with one prompt and three large touch buttons.
+- [ ] Load one question from `game/data/vocab_seed.json`.
+- [ ] Implement correct/incorrect answer feedback text.
+- [ ] Trigger one happy reaction and one thinking reaction on Henry.
+- [ ] Save and reload one progress value using `SaveManager.gd`.
+- [ ] Verify scene flow on iPad simulator in landscape mode.
+- [ ] Verify scene flow on Selah's iPad in landscape mode.
+
 ## Milestone 0: Repo Setup
-- [ ] Initialize git
-- [ ] Create .gitignore
-- [ ] Create README.md
-- [ ] Create PROJECT_PLAN.md
-- [ ] Create docs/AGENT_RULES.md
-- [ ] Create docs/IOS_BUILD_RUNBOOK.md
+- [x] Initialize git
+- [x] Create .gitignore
+- [x] Create README.md
+- [x] Create PROJECT_PLAN.md
+- [x] Create docs/AGENT_RULES.md
+- [x] Create docs/IOS_BUILD_RUNBOOK.md
 - [x] Create docs/BACKLOG.md
-- [ ] Create future-api/README.md
+- [x] Create future-api/README.md
 
 ## Milestone 1: Godot Toolchain Proof
 - [ ] Verify Xcode 26.6 can connect to iPadOS 16.7.16 device

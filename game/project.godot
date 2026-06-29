@@ -1,0 +1,11 @@
+; Engine configuration file.
+; Edit via Godot Editor when available.
+
+config_version=5
+
+[application]
+config/name="TeachersPet"
+run/main_scene="res://scenes/Main.tscn"
+
+[rendering]
+renderer/rendering_method="mobile"

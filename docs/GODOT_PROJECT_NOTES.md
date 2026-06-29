@@ -6,9 +6,13 @@ Track manual editor actions, iOS export notes, and short troubleshooting entries
 
 ## Manual Steps Log
 
-- Date:
-  - Action:
-  - Result:
+- Date: 2026-06-29
+  - Action: Installed Godot 4.7 stable via `brew install --cask godot` (binary at
+    `/opt/homebrew/bin/godot`, app at `/Applications/Godot.app`).
+  - Result: `godot --headless --path game` imports and runs the first playable
+    slice with no script or scene errors. Fixed one scaffold issue where
+    `SaveManager.load_json` inferred a variable from a `Variant` (this project
+    treats that warning as an error).
 
 ## Pending Verification: First Playable Slice
 

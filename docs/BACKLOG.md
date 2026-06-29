@@ -11,9 +11,11 @@
 - [ ] Verify scene flow on iPad simulator in landscape mode.
 - [ ] Verify scene flow on Selah's iPad in landscape mode.
 
-> Code for the slice is complete but unverified: Godot is not installed yet
-> (see Milestone 1). Open the project in Godot 4.x to play-test, then complete
-> the two verification items above.
+> Code for the slice is complete and validated headlessly with Godot 4.7
+> (`godot --headless --path game` runs with no script or scene errors). The two
+> remaining items need a real device/simulator: open the project in the Godot
+> editor to play-test interactively, then do an iOS export to confirm on the
+> simulator and Selah's iPad in landscape.
 
 ## Milestone 0: Repo Setup
 - [x] Initialize git
@@ -27,7 +29,7 @@
 
 ## Milestone 1: Godot Toolchain Proof
 - [ ] Verify Xcode 26.6 can connect to iPadOS 16.7.16 device
-- [ ] Install Godot 4.x stable
+- [x] Install Godot 4.x stable
 - [ ] Install matching Godot export templates
 - [ ] Create Godot project under game/
 - [ ] Create minimal 3D scene with placeholder pet
